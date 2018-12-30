@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE IntentLetter [
+<!ELEMENT IntentLetter (Head, Body, Footer)>
+
+<!ELEMENT Head (SendDate, Recipient)>
+<!ELEMENT SendDate (#PCDATA)>
+<!ELEMENT Recipient (Name, Position*, Company, Address)>
+<!ELEMENT Name (#PCDATA)>
+<!ATTLIST Name
+              Title        (MR | MRS | MS)  #IMPLIED
+              FirstName    CDATA            #REQUIRED
+              LastName     CDATA            #REQUIRED>
+<!ELEMENT Position (#PCDATA)>
+<!ELEMENT Company (#PCDATA)>
+<!ELEMENT Address (Street, City, State, Zip)>
+<!ELEMENT Street (#PCDATA)>
+<!ELEMENT City (#PCDATA)>
+<!ELEMENT State (#PCDATA)>
+<!ELEMENT Zip (#PCDATA)>
+
+<!ELEMENT Body (Salutation, Para+)>
+<!ELEMENT Salutation (#PCDATA)>
+<!ATTLIST Salutation
+              Greet   CDATA  #REQUIRED
+              Name    CDATA  #REQUIRED>
+<!ELEMENT Para (#PCDATA)>
+
+<!ELEMENT Footer (Closing, SenderName, SenderAddress)>
+<!ELEMENT Closing (#PCDATA)>
+<!ATTLIST Closing
+              Valedictory   CDATA  #REQUIRED>
+<!ELEMENT SenderName (#PCDATA)>
+<!ATTLIST SenderName
+               FirstName    CDATA            #REQUIRED
+               LastName     CDATA            #REQUIRED >
+<!ELEMENT SenderAddress (SenderStreet, SenderCity, SenderState, SenderZip)>
+<!ELEMENT SenderStreet (#PCDATA)>
+<!ELEMENT SenderCity (#PCDATA)>
+<!ELEMENT SenderState (#PCDATA)>
+<!ELEMENT SenderZip (#PCDATA)>
+]>
+
+<IntentLetter>
+	<Head>
+		<SendDate>October 30, 2013</SendDate>
+		<Recipient>
+			<Name Title="MS" FirstName="Lucille" LastName="Craft"> </Name>
+			<Position>Account Director</Position>
+			<Company>Joyhut Advertising</Company>
+			<Address>
+				<Street>1 Madison Avenue.</Street>
+				<City>New York</City>
+				<State>NY</State>
+				<Zip>10005</Zip>
+			</Address>
+	 </Recipient>
+	</Head>
+	<Body>
+		<Salutation Greet="Dear" Name="Lucille">
+	  </Salutation>
+		<Para>
+				I would like to express my interest in Joyhut Advertising and the available Account Executive position described on your agency's Web site.
+				After four years at Stanford University, where I majored in English and wrote for the school paper, I leapt into the competitive world of advertising at Olf and Oleman Worldwide in San Francisco. For the past year I have served a valuable apprenticeship in the advertising industry, working as an assistant account executive on the Harbinger Sporting Goods account.
+				During my time on the Harbinger account, the company's advertising spending has increased by $2 million, and I have progressed from having very little client contact to interfacing with the client-side on a regular basis.
+				Since my introduction to the world of advertising, it has been my goal to work on Madison Avenue. I would very much like to discuss the open position. Thank you for your time spent reading this letter and the enclosed resume. I look forward to hearing from you soon.
+		</Para>
+	</Body>
+	<Footer>
+		<Closing Valedictory="Sincerely"></Closing>
+		<SenderName  FirstName="Bret" LastName="Orfman"> </SenderName>
+		<SenderAddress>
+				<SenderStreet>456 Sixth Avenue</SenderStreet>
+				<SenderCity>New York</SenderCity>
+				<SenderState>NY</SenderState>
+				<SenderZip>10011</SenderZip>
+		</SenderAddress>
+	</Footer>
+</IntentLetter>
